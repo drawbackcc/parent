@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:task="http://www.springframework.org/schema/task"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task.xsd">
+
+    <!--配置自动扫描schedule包下的注解-->
+    <context:component-scan base-package="com.example.ssmredis.schedule"/>
+
+    <!-- 调度线程池配置 --><!--配置 task:scheduler 参数的线程池，是为了根据任务总数来分配调度线程池的大小-->
+    <task:scheduler id="scheduler" pool-size="3"/>
+    <!-- 执行线程池配置,用于@Async注解 --><!--配置 task:executor ，是为了某个任务如果要异步的执行时，实现当前任务内的多线程并发-->
+    <!-- @Async 注解代表可以异步执行。异步执行的话，调度线程池就会不用当前调度线程来执行，而是交给 task:executor 这个执行线程池来执行-->
+    <task:executor id="executor" pool-size="3"/>
+
+    <!--配置下面这个xml就不用在task类上写@EnableScheduling注解，或者在类上写@EnableScheduling注解就不用配置这个xml-->
+<!--    <task:annotation-driven scheduler="scheduler" executor="executor"/>-->
+
+</beans>
+
+
+
+
+
+
+

@@ -1,0 +1,28 @@
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.ssmredis.dao.UserMapper">
+
+    <select id="getUserList" resultType="user">
+        SELECT id, name, age, gender
+        FROM user
+    </select>
+
+    <select id="getUserById" resultType="user">
+        SELECT id, name, age, gender
+        FROM user
+        WHERE id = #{id}
+    </select>
+
+    <update id="updateUser">
+        UPDATE user
+        SET name = #{user.name}, age = #{user.age}, gender = #{user.gender}
+        WHERE id = #{user.id}
+    </update>
+
+    <delete id="deleteUser">
+        DELETE from user
+        WHERE id = #{id}
+    </delete>
+
+</mapper>
