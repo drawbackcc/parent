@@ -25,6 +25,16 @@ public class UserController {
         return userService.getUserList();
     }
 
+    @RequestMapping("/userData")
+    public Map<String, Object> userData(User user){
+        System.out.println(user);
+        HashMap<String, Object> map = new HashMap<>();
+        List<User> users = userService.getUserList();
+        map.put("total", users.size());
+        map.put("rows", users);
+        return map;
+    }
+
     @RequestMapping("/{id}")
     public User getUser(@PathVariable("id")Integer id){
         return userService.getUserById(id);
