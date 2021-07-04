@@ -1,0 +1,22 @@
+server:
+  port: 8084
+  servlet:
+    # 没有/会出错
+    context-path: /activiti_sb
+spring:
+  datasource:
+    #应用程序数据源
+    data1:
+#      type: com.alibaba.druid.pool.DruidDataSource
+      jdbc-url: jdbc:mysql://localhost:3306/activiti_sb?serverTimezone=Asia/Shanghai&characterEncoding=utf-8&useSSL=false
+      username: root
+      password: chenzhimei
+      driver-class-name: com.mysql.cj.jdbc.Driver
+    #activiti数据源
+    data2:
+#      type: com.alibaba.druid.pool.DruidDataSource
+      jdbc-url: jdbc:mysql://localhost:3306/activiti_sb?serverTimezone=Asia/Shanghai&characterEncoding=utf-8&useSSL=false&nullCatalogMeansCurrent=true
+      username: root
+      password: chenzhimei
+      driver-class-name: com.mysql.cj.jdbc.Driver
+

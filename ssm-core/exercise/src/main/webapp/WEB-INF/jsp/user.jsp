@@ -19,6 +19,9 @@
 </head>
 <body>
 <div>
+测试一下web.xml里的<context-param>:${initParam.greeting}
+</div>
+<div>
     <form id="search-list">
         姓名<input name="name" value="amy"><br>
         年龄<input name="age" value="11"><br>
@@ -93,28 +96,29 @@
                 align:'left',
                 sortable: true
             },{
-
-                    title : '性別',
-                    field : 'gender',
-                    align : "center",
-                    width : 90,
-                    sortable: true
-                }
-            ]],
-            icons:{
-                paginationSwitchDown: 'icon-chevron-down',
-                paginationSwitchUp: 'icon-chevron-up',
-                refresh: 'icon-refresh',
-                toggle: 'icon-list-alt',
-                columns: 'icon-th',
-                detailOpen: 'icon-plus',
-                detailClose: 'icon-minus',
-                fullscreen:'icon-fullscreen'
-            },
+                title : '性別',
+                field : 'gender',
+                align : "center",
+                width : 90,
+                sortable: true
+            }]],
+            // icons:{
+            //     paginationSwitchDown: 'icon-chevron-down',
+            //     paginationSwitchUp: 'icon-chevron-up',
+            //     refresh: 'icon-refresh',
+            //     toggle: 'icon-list-alt',
+            //     columns: 'icon-th',
+            //     detailOpen: 'icon-plus',
+            //     detailClose: 'icon-minus',
+            //     fullscreen:'icon-fullscreen'
+            // },
             onLoadSuccess: function(data){
                 console.log("onLoadSuccess")
                 console.log(data)
-            }
+            },
+            onLoadError: function () {
+                console.log("数据加载失败！");
+             },
         });
     })
     /************* 查询 start *************/

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Welcome!</title>
+</head>
+<body>
+<table>
+  <thead>
+  <tr>
+    <th>用户ID</th>
+    <th>用户名称</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr th:each="user : ${users}">
+    <td th:text="${user.id}"></td>
+    <td th:text="${user.name}"></td>
+  </tr>
+  </tbody>
+</table>
+如果真的有了，那也是天意让我绝不放手<br>
+
+</body>
+</html>

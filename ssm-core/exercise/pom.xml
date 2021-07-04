@@ -24,53 +24,38 @@
   </properties>
 
   <dependencies>
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>4.11</version>
-      <scope>test</scope>
-    </dependency>
-      <dependency>
-          <groupId>org.projectlombok</groupId>
-          <artifactId>lombok</artifactId>
-          <version>1.16.20</version>
-          <scope>compile</scope>
-      </dependency>
+<!--    <dependency>-->
+<!--      <groupId>junit</groupId>-->
+<!--      <artifactId>junit</artifactId>-->
+<!--      <version>4.11</version>-->
+<!--      <scope>test</scope>-->
+<!--    </dependency>-->
+<!--      <dependency>-->
+<!--          <groupId>org.projectlombok</groupId>-->
+<!--          <artifactId>lombok</artifactId>-->
+<!--          <version>1.16.20</version>-->
+<!--          <scope>compile</scope>-->
+<!--      </dependency>-->
   </dependencies>
 
   <build>
     <finalName>exercise</finalName>
     <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
       <plugins>
-        <plugin>
-          <artifactId>maven-clean-plugin</artifactId>
-          <version>3.1.0</version>
-        </plugin>
-        <!-- see http://maven.apache.org/ref/current/maven-core/default-bindings.html#Plugin_bindings_for_war_packaging -->
-        <plugin>
-          <artifactId>maven-resources-plugin</artifactId>
-          <version>3.0.2</version>
-        </plugin>
-        <plugin>
-          <artifactId>maven-compiler-plugin</artifactId>
-          <version>3.8.0</version>
-        </plugin>
-        <plugin>
-          <artifactId>maven-surefire-plugin</artifactId>
-          <version>2.22.1</version>
-        </plugin>
-        <plugin>
-          <artifactId>maven-war-plugin</artifactId>
-          <version>3.2.2</version>
-        </plugin>
-        <plugin>
-          <artifactId>maven-install-plugin</artifactId>
-          <version>2.5.2</version>
-        </plugin>
-        <plugin>
-          <artifactId>maven-deploy-plugin</artifactId>
-          <version>2.8.2</version>
-        </plugin>
+<!--         插件启动配置 -->
+              <plugin>
+                <groupId>org.apache.tomcat.maven</groupId>
+                <artifactId>tomcat7-maven-plugin</artifactId>
+                <version>2.2</version>
+                <!--如果不设置，则默认为猫的自定义端口，项目路径为http://localhost:默认端口/项目名  -->
+                <configuration>
+                  <!--如果端口号改为8088：那么访问的时候路径的端口就要写成8088  -->
+                  <port>8080</port>
+                  <!-- 如果设置为/，则项目了路径为http://localhost:端口号 /-->
+                  <!-- 如果设置为/lw，则项目了路径为http://localhost:端口号/lw -->
+                  <path>/exercise</path>
+                </configuration>
+              </plugin>
       </plugins>
     </pluginManagement>
   </build>

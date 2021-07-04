@@ -1,0 +1,28 @@
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.activitispringboot.dao.UserMapper">
+
+    <select id="getUserList" resultType="user">
+        SELECT id, name
+        FROM user_info
+    </select>
+
+    <select id="getUserById" resultType="user">
+        SELECT id, name
+        FROM user_info
+        WHERE id = #{id}
+    </select>
+
+    <update id="updateUser">
+        UPDATE user_info
+        SET name = #{user.name}
+        WHERE id = #{user.id}
+    </update>
+
+    <delete id="deleteUser">
+        DELETE from user_info
+        WHERE id = #{id}
+    </delete>
+
+</mapper>

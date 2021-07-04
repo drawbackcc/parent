@@ -8,6 +8,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="exercise" />
+        <module name="activiti-springboot" />
         <module name="ssmexer1" />
         <module name="springcache-springboot" />
       </profile>
@@ -15,6 +16,7 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="activiti-springboot" options="-parameters" />
       <module name="springcache-springboot" options="-parameters" />
     </option>
   </component>

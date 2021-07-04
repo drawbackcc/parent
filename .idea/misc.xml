@@ -10,6 +10,7 @@
       <list>
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/springcache-springboot/pom.xml" />
+        <option value="$PROJECT_DIR$/activiti-springboot/pom.xml" />
       </list>
     </option>
   </component>

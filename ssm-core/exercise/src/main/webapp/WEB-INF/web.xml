@@ -35,5 +35,10 @@
     <filter-name>CharacterEncodingFilter</filter-name>
     <url-pattern>/*</url-pattern>
   </filter-mapping>
+  
+  <context-param>
+    <param-name>greeting</param-name>
+    <param-value>get out of my life!</param-value>
+  </context-param>
 
 </web-app>
